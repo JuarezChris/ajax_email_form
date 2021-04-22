@@ -1,0 +1,14 @@
+{% with messages = get_flashed_messages() %} 
+{% if messages %}                           
+    {% for message in messages %}          
+        <p>{{message}}</p>                
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+{% if found == True %}
+<p class="error">Email has been taken.</p>
+{% endif %}
+{% if found == False %}
+<p class="success"> This email is available</p>
+{% endif %}
